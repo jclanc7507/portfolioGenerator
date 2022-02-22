@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jclanc7507/portfolioGenerator/issues"
   },
-  "homepage": "https://github.com/jclanc7507/portfolioGenerator#readme"
+  "homepage": "https://github.com/jclanc7507/portfolioGenerator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  }
 }
