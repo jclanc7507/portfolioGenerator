@@ -2,6 +2,8 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const generatePage = require('./src/page-template');
 
+//9.5.3
+
 const promptUser = () => {
     return inquirer.prompt([ 
         {
@@ -132,7 +134,7 @@ promptUser()
     console.log(portfolioData);
     const pageHTML = generatePage(portfolioData);
         
-    fs.writeFile('./index.html', pageHTML, err => {
+    fs.writeFile('./dist/index.html', pageHTML, err => {
         if (err) throw new Error(err);
 
         console.log('Portfolio complete! Check index.html for output.');
