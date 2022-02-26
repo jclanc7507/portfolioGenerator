@@ -126,15 +126,32 @@ Add a New Project
     });
 };
 
+// const mockData = {
+//     name: 'Jeremiah',
+//     github: 'jclanc7507',
+//     confirmAbout: true,
+//     about: '',
+//     projects: [
+//         {
+//         projectName: 'portfolioGenerator',
+//         description: 'Generates an HTML & CSS styled portfolio through the use of a Node.js powered program',
+//         link: 'https://github.com/jclanc7507/portfolioGenerator',
+//         feature: 'n',
+//         confirmAddProject: 'n'
+//         },
+//      ]
+// };
+//const pageHTML = generatePage(mockData);
+
 promptUser()
 .then(promptProject)
 .then(portfolioData => {
     console.log(portfolioData);
+    const pageHTML = generatePage(portfolioData);
+        
+    fs.writeFile('./index.html', pageHTML, err => {
+        if (err) throw new Error(err);
 
-const pageHTML = generatePage(portfolioData);
-    
-fs.writeFile('./index.html', pageHTML, err => {
-    if (err) throw new Error(err);
-    console.log('Portfolio complete! Check index.html for output.');
+        console.log('Portfolio complete! Check index.html for output.');
     });
 });
